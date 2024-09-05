@@ -25,19 +25,19 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/startSpill"
+            android:id="@+id/startSpillKnapp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Start spill"
             />
         <Button
-            android:id="@+id/omSpillet"
+            android:id="@+id/omSpilletKnapp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Om spillet"
             />
         <Button
-            android:id="@+id/preferanser"
+            android:id="@+id/preferanserKnapp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Preferanser"
