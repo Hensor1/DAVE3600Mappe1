@@ -42,6 +42,10 @@
             android:layout_height="wrap_content"
             android:text="Preferanser"
             />
+        <FrameLayout android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

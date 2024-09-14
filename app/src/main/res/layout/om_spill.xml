@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.s375063s375045.Preferanser">
+    tools:context="com.example.s375063s375045.OmSpill">
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -10,14 +10,14 @@
         android:text="Dette er fragment 2"
         android:textColor="@color/black"
         android:textSize="25sp" />
-    <Button android:id="@+id/preferanserKnapp"
+    <Button android:id="@+id/omSpilletKnapp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="#00ff00"
-        android:text="Preferanser"
+        android:text=" Fragment 2"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />

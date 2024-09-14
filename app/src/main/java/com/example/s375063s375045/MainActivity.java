@@ -1,5 +1,6 @@
 package com.example.s375063s375045;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,9 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,39 +20,49 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        // EdgeToEdge-funksjonen
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        startSpillKnapp = (Button) findViewById(R.id.startSpillKnapp);
-        omSpilletKnapp = (Button) findViewById(R.id.omSpilletKnapp);
-        preferanserKnapp = (Button) findViewById(R.id.preferanserKnapp);
+        // Initialiser knappene
+        startSpillKnapp = findViewById(R.id.startSpillKnapp);
+        omSpilletKnapp = findViewById(R.id.omSpilletKnapp);
+        preferanserKnapp = findViewById(R.id.preferanserKnapp);
 
+        // Start aktivitet for StartSpill
         startSpillKnapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            loadFragment(new startSpill());
+                // Starter en ny aktivitet
+                Intent intent = new Intent(MainActivity.this, StartSpill.class);
+                startActivity(intent);
             }
         });
+
+
+        /* Start aktivitet for OmSpill
         omSpilletKnapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            loadFragment(new omSpill());
+                // Starter en ny aktivitet for OmSpill
+                Intent intent = new Intent(MainActivity.this, OmSpillActivity.class);
+                startActivity(intent);
             }
         });
+
+        // Start aktivitet for Preferanser
         preferanserKnapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            loadFragment(new preferanser());
+                // Starter en ny aktivitet for Preferanser
+                Intent intent = new Intent(MainActivity.this, PreferanserActivity.class);
+                startActivity(intent);
             }
         });
+         */
     }
-    private void loadFragment(Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
-    }
-    }
+}
