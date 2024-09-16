@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Matteopplæring</string>
+    <string-array name="matte_problemer">
+        <item>5 + 3=8</item>
+        <item>12 + 7=19</item>
+        <item>6 + 4=10</item>
+        <item>9 + 5=14</item>
+        <item>7 + 8=15</item>
+        <item>4 + 9=13</item>
+        <item>11 + 6=17</item>
+        <item>8 + 3=11</item>
+        <item>7 + 2=9</item>
+        <item>15 + 4=19</item>
+        <item>5 + 7=12</item>
+        <item>9 + 1=10</item>
+        <item>6 + 8=14</item>
+        <item>10 + 5=15</item>
+        <item>3 + 4=7</item>
+        <item>13 + 2=15</item>
+    </string-array>
+</resources>
