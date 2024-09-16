@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">Matteopplæring</string>
     <string-array name="matte_problemer">
         <item>5 + 3=8</item>
         <item>12 + 7=19</item>
