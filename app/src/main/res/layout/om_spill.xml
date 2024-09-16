@@ -2,23 +2,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mattekul_bakgrunn"
     tools:context="com.example.s375063s375045.OmSpill">
-    <TextView android:layout_width="wrap_content"
+
+    <!-- Title TextView for the game information -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:text="Dette er fragment 2"
+        android:layout_marginTop="20dp"
+        android:text="Velkommen til Mattespillet!"
         android:textColor="@color/black"
-        android:textSize="25sp" />
-    <Button android:id="@+id/omSpilletKnapp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="#00ff00"
-        android:text=" Fragment 2"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold" />
+
+    <!-- Description TextView -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTextView"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Mattespillet er et lærerikt og morsomt spill laget for å hjelpe deg med å forbedre dine matematikkferdigheter! I dette spillet vil du bli presentert med en rekke addisjonsregnestykker. Målet ditt er å bruke knappene for å skrive inn de riktige svarene.\n\nHvordan Spiller Du?\n- Når du starter spillet, får du se en addisjon oppgave.\n- Bruk tallknappene til å velge det riktige svaret.\n- Hvis du svarer riktig, vil du gå videre til neste oppgave.\n- Hvis svaret er feil, vil du få en vennlig tilbakemelding og mulighet til å prøve igjen.\n\nSpillalternativer:\n- Antall Spørsmål: Du kan velge hvor mange oppgaver du vil ha i spillet: 5, 10 eller 15.\n- Språk: Velg mellom norsk og tysk for å tilpasse spillet til ditt foretrukne språk.\n\nTips for å Lære:\n- Ta deg tid til å tenke før du svarer.\n- Prøv å forbedre tiden din mens du besvarer oppgavene.\n- Ha det moro mens du lærer!"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
 </RelativeLayout>
