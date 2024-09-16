@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         preferanserKnapp.setOnClickListener(view -> {
             fragmentContainer.setVisibility(View.VISIBLE); // Show fragment container
-            replaceFragment(new Preferanser()); // Replace with Preferanser fragment
+            replaceFragment(new SettingsFragment()); // Replace with Preferanser fragment
         });
     }
 

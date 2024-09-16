@@ -1,0 +1,21 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Antall regnestykker preferanse -->
+    <ListPreference
+        android:key="antall_regnestykker"
+        android:title="Antall Regnestykker"
+        android:defaultValue="5"
+        android:entries="@array/antall_regnestykker_entries"
+        android:entryValues="@array/antall_regnestykker_values"
+        android:dialogTitle="Velg antall regnestykker" />
+
+    <!-- Språk preferanse -->
+    <ListPreference
+        android:key="language_preference"
+        android:title="Velg Språk"
+        android:defaultValue="nb"
+        android:entries="@array/sprak_entries"
+        android:entryValues="@array/sprak_values"
+        android:dialogTitle="Velg språk" />
+
+</PreferenceScreen>
