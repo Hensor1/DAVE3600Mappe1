@@ -18,7 +18,7 @@
 
         <!-- Knapp 1 -->
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/knapp1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -30,7 +30,7 @@
 
         <!-- Knapp 2 -->
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/knapp2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -42,7 +42,7 @@
 
         <!-- Knapp 3 -->
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/knapp3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -54,7 +54,7 @@
 
         <!-- Knapp 4 -->
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/knapp4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -66,7 +66,7 @@
 
         <!-- Knapp 5 -->
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/knapp5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -78,7 +78,7 @@
 
         <!-- Knapp 6 -->
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/knapp6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -90,7 +90,7 @@
 
         <!-- Knapp 7 -->
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/knapp7"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -102,7 +102,7 @@
 
         <!-- Knapp 8 -->
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/knapp8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -114,7 +114,7 @@
 
         <!-- Knapp 9 -->
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/knapp9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
