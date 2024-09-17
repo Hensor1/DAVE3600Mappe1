@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Velkommen til Mattespillet!"
+        android:text="@string/velkommentilMattespillet"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -25,7 +25,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Mattespillet er et lærerikt og morsomt spill laget for å hjelpe deg med å forbedre dine matematikkferdigheter! I dette spillet vil du bli presentert med en rekke addisjonsregnestykker. Målet ditt er å bruke knappene for å skrive inn de riktige svarene.\n\nHvordan Spiller Du?\n- Når du starter spillet, får du se en addisjon oppgave.\n- Bruk tallknappene til å velge det riktige svaret.\n- Hvis du svarer riktig, vil du gå videre til neste oppgave.\n- Hvis svaret er feil, vil du få en vennlig tilbakemelding og mulighet til å prøve igjen.\n\nSpillalternativer:\n- Antall Spørsmål: Du kan velge hvor mange oppgaver du vil ha i spillet: 5, 10 eller 15.\n- Språk: Velg mellom norsk og tysk for å tilpasse spillet til ditt foretrukne språk.\n\nTips for å Lære:\n- Ta deg tid til å tenke før du svarer.\n- Prøv å forbedre tiden din mens du besvarer oppgavene.\n- Ha det moro mens du lærer!"
+        android:text="@string/infoOmSpillet"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_alignParentStart="true"

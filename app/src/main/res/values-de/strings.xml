@@ -1,21 +1,57 @@
 <resources>
-    <string name="app_name">Matteopplæring</string>
-    <string-array name="matte_problemer">
-        <item>5 + 3=8</item>
-        <item>12 + 7=19</item>
-        <item>6 + 4=10</item>
-        <item>9 + 5=14</item>
-        <item>7 + 8=15</item>
-        <item>4 + 9=13</item>
-        <item>11 + 6=17</item>
-        <item>8 + 3=11</item>
-        <item>7 + 2=9</item>
-        <item>15 + 4=19</item>
-        <item>5 + 7=12</item>
-        <item>9 + 1=10</item>
-        <item>6 + 8=14</item>
-        <item>10 + 5=15</item>
-        <item>3 + 4=7</item>
-        <item>13 + 2=15</item>
-    </string-array>
+    <!-- STRINGS FOR STARTSIDEN -->
+    <string name="app_name">Mathe-Training</string>
+    <string name="matteSpill">Mathe-Spiel</string>
+    <string name="startSpill">Spiel starten</string>
+    <string name="omSpillet">über das Spiel</string>
+    <string name="preferanser">Vorlieben</string>
+
+    <!-- STRINGS FOR START SPILL -->
+    <string name="løsOppgaven">Lösen Sie das Problem</string>
+    <string name="svar">Schreiben Sie hier Ihre Antwort</string>
+    <string name="riktigeSvar">richtige Antworten</string>
+    <string name="galeSvar">falsche Antworten</string>
+    <string name="knapp1">1</string>
+    <string name="knapp2">2</string>
+    <string name="knapp3">3</string>
+    <string name="knapp4">4</string>
+    <string name="knapp5">5</string>
+    <string name="knapp6">6</string>
+    <string name="knapp7">7</string>
+    <string name="knapp8">8</string>
+    <string name="knapp9">9</string>
+    <string name="knapp0">0</string>
+
+    <!-- STRINGS FOR OM SPILLET -->
+    <string name="velkommentilMattespillet">Willkommen beim Mathe-Spiel!</string>
+    <string name="infoOmSpillet">Das Mathe-Spiel ist ein lehrreiches und unterhaltsames Spiel, das Ihnen dabei helfen soll, Ihre mathematischen Fähigkeiten zu verbessern! In diesem Spiel werden Ihnen eine Reihe von Additionsberechnungen präsentiert. Ihr Ziel ist es, mithilfe der Schaltflächen die richtigen Antworten einzugeben.
+        \n
+        \nWie spielst du?
+        \n-Wenn Sie das Spiel starten, wird eine zusätzliche Aufgabe angezeigt.
+        \n- Verwenden Sie die Zifferntasten, um die richtige Antwort auszuwählen.
+        \n- Wenn Sie richtig antworten, fahren Sie mit der nächsten Aufgabe fort.
+        \n- Sollte die Antwort falsch sein, erhalten Sie eine freundliche Rückmeldung und die Möglichkeit, es erneut zu versuchen.
+        \n
+        \nSpieloptionen:
+        \n- Anzahl der Fragen: Sie können wählen, wie viele Fragen Sie im Spiel haben möchten: 5, 10 oder 15.
+        \n- Sprache: Wählen Sie zwischen Norwegisch und Deutsch, um das Spiel an Ihre bevorzugte Sprache anzupassen.
+        \n
+        \nTipps zum Lernen:
+        \n- Nehmen Sie sich Zeit zum Nachdenken, bevor Sie antworten.
+        \n- Versuchen Sie, Ihre Zeit beim Beantworten der Aufgaben zu verbessern.
+        \n- Viel Spaß beim Lernen!</string>
+
+    <!-- STRINGS FOR PREFERANSER -->
+    <string name="fem">5</string>
+    <string name="ti">10</string>
+    <string name="tjuefem">25</string>
+    <string name="norsk">Norwegische</string>
+    <string name="tysk">Deutsche</string>
+    <string name="velgSprak">Wähle deine Sprache</string>
+    <string name="sprak">Sprache</string>
+    <string name="antallStykker">Anzahl der Stücke</string>
+    <string name="velgAntall">Nummer auswählen</string>
+    <string name="no">no</string>
+    <string name="de">de</string>
+    <string name="Velg">Wählen</string>
 </resources>
