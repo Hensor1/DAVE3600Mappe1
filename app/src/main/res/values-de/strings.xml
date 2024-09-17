@@ -41,6 +41,23 @@
         \n- Versuchen Sie, Ihre Zeit beim Beantworten der Aufgaben zu verbessern.
         \n- Viel Spaß beim Lernen!</string>
 
+    <string name="infoOmSpilletLand">Das Mathe-Spiel ist ein lehrreiches und unterhaltsames Spiel, das Ihnen dabei helfen soll, Ihre mathematischen Fähigkeiten zu verbessern! In diesem Spiel werden Ihnen eine Reihe von Additionsberechnungen präsentiert. Ihr Ziel ist es, mithilfe der Schaltflächen die richtigen Antworten einzugeben.
+        \n
+        \nWie spielst du?
+        \n-Wenn Sie das Spiel starten, wird eine zusätzliche Aufgabe angezeigt.
+        Verwenden Sie die Zifferntasten, um die richtige Antwort auszuwählen.
+        Wenn Sie richtig antworten, fahren Sie mit der nächsten Aufgabe fort.
+        Sollte die Antwort falsch sein, erhalten Sie eine freundliche Rückmeldung und die Möglichkeit, es erneut zu versuchen.
+        \n
+        \nSpieloptionen:
+        Anzahl der Fragen: Sie können wählen, wie viele Fragen Sie im Spiel haben möchten: 5, 10 oder 15.
+        Sprache: Wählen Sie zwischen Norwegisch und Deutsch, um das Spiel an Ihre bevorzugte Sprache anzupassen.
+        \n
+        \nTipps zum Lernen:
+        Nehmen Sie sich Zeit zum Nachdenken, bevor Sie antworten.
+        Versuchen Sie, Ihre Zeit beim Beantworten der Aufgaben zu verbessern.
+        Viel Spaß beim Lernen!</string>
+
     <!-- STRINGS FOR PREFERANSER -->
     <string name="fem">5</string>
     <string name="ti">10</string>
