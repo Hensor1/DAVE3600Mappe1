@@ -5,8 +5,6 @@
         android:key="antall_regnestykker"
         android:title="Antall Regnestykker"
         android:defaultValue="5"
-        android:entries="@array/antall_regnestykker_entries"
-        android:entryValues="@array/antall_regnestykker_values"
         android:dialogTitle="Velg antall regnestykker" />
 
     <!-- Språk preferanse -->

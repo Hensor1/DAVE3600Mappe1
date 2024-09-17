@@ -1,20 +1,85 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/mattekul_bakgrunn"
     tools:context=".StartSpill">
 
+    <!-- TextView for oppgave -->
+    <TextView
+        android:id="@+id/txt_oppgave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Løs oppgaven"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView for å vise svaret til brukeren -->
+    <TextView
+        android:id="@+id/txt_svar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Skriv svaret ditt her"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_oppgave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView for riktige svar -->
+    <TextView
+        android:id="@+id/txt_riktige_svar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Riktige svar"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_svar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView for gale svar -->
+    <TextView
+        android:id="@+id/txt_gale_svar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Gale svar"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_riktige_svar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
     <!-- GridLayout for å organisere knappene, plassert på bunnen -->
     <GridLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
         android:columnCount="3"
-        android:rowCount="3"
-        android:padding="8dp"
-        android:background="@android:color/white">
+        android:rowCount="4"
+        android:padding="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Knapp 1 -->
         <Button
@@ -124,6 +189,18 @@
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
 
+        <!-- Knapp 0 -->
+        <Button
+            android:id="@+id/knapp0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:text="0"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/knapp_bakgrunn" />
+
     </GridLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
