@@ -1,5 +1,6 @@
 package com.example.s375063s375045;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,9 +35,11 @@ public class MainActivity extends AppCompatActivity {
         preferanserKnapp = findViewById(R.id.preferanserKnapp);
         fragmentContainer = findViewById(R.id.fragment_container);
 
-        startSpillKnapp.setOnClickListener(view -> {
-            fragmentContainer.setVisibility(View.VISIBLE); // Show fragment container
-            replaceFragment(new StartSpill()); // Replace with StartSpill fragment
+        startSpillKnapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nyAktivitet(StartSpill.class);
+            }
         });
 
         omSpilletKnapp.setOnClickListener(view -> {
@@ -56,5 +59,10 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    private void nyAktivitet(Class k){
+        Intent i = new Intent(this, k);
+        startActivity(i);
     }
 }
