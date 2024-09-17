@@ -1,6 +1,9 @@
 package com.example.s375063s375045;
 
+import static com.example.s375063s375045.Locale.setLocale;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.preference.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
             fragmentContainer.setVisibility(View.VISIBLE); // Show fragment container
             replaceFragment(new SettingsFragment()); // Replace with Preferanser fragment
         });
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String languageCode = sharedPrefs.getString("language", "en"); // Standard til engelsk
+        setLocale(this, languageCode);
     }
 
     private void replaceFragment(Fragment fragment) {
