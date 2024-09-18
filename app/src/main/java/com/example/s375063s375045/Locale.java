@@ -2,20 +2,18 @@ package com.example.s375063s375045;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.os.LocaleListCompat;
 import androidx.preference.PreferenceManager;
 
 public class Locale {
 
     public static void setLocale(Context context, String languageCode) {
-        java.util.Locale locale = new java.util.Locale(languageCode);
-        java.util.Locale.setDefault(locale);
-        Resources resources = context.getResources();
-        Configuration configuration = resources.getConfiguration();
-        configuration.setLocale(locale);
-        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+        // Opprett LocaleListCompat med ønsket språk
+        LocaleListCompat appLocale = LocaleListCompat.forLanguageTags(languageCode);
+        // Sett applikasjonens lokaliteter
+        AppCompatDelegate.setApplicationLocales(appLocale);
 
         // Lagre den valgte språkkoden i SharedPreferences
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);

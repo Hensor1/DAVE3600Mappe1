@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -72,15 +73,20 @@ public class StartSpill extends AppCompatActivity {
             Button knapp = findViewById(knappIdListe[i]);
             int finalI = i;
 
-            knapp.setOnClickListener(view -> {
-                if (knappIdListe[finalI] == R.id.knappTilbake) {
-                    slettSisteTall();  // Kall metoden for å slette siste tegn
-                } else if (knappIdListe[finalI] == R.id.knappOk) {
-                    sjekkSvar();  // Kall metoden for å sjekke svaret
-                } else {
-                    nyttTallSvar(finalI);
+            knapp.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (knappIdListe[finalI] == R.id.knappTilbake) {
+                        slettSisteTall();  // Kall metoden for å slette siste tegn
+                    } else if (knappIdListe[finalI] == R.id.knappOk) {
+                        sjekkSvar();  // Kall metoden for å sjekke svaret
+                    } else {
+                        nyttTallSvar(finalI);
+                    }
                 }
             });
+
+
         }
     }
 
