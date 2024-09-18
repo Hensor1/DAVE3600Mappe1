@@ -2,12 +2,14 @@ package com.example.s375063s375045;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +30,10 @@ public class StartSpill extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_spill);
 
+        // Hent antall regnestykker fra preferansene
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        int antallRegnestykker = Integer.parseInt(prefs.getString("RUNDER", "5"));
+
         // Last inn matteproblemene fra arrays.xml
         Resources res = getResources();
         String[] matteProblemerArray = res.getStringArray(R.array.matte_problemer);
@@ -36,6 +42,11 @@ public class StartSpill extends AppCompatActivity {
         matteProblemer = new ArrayList<>();
         Collections.addAll(matteProblemer, matteProblemerArray);
         Collections.shuffle(matteProblemer); // Bland spørsmålene
+
+        // Begrens matteproblemene til antall regnestykker valgt av brukeren
+        if (matteProblemer.size() > antallRegnestykker) {
+            matteProblemer = matteProblemer.subList(0, antallRegnestykker);
+        }
 
         // Start med første spørsmål
         visNesteSpørsmål();

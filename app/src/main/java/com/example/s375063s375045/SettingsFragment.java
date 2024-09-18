@@ -16,7 +16,8 @@ import androidx.preference.PreferenceFragmentCompat;
 public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {setPreferencesFromResource(R.xml.preferanser, rootKey);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        setPreferencesFromResource(R.xml.preferanser, rootKey);
 
         ListPreference languagePreference = findPreference("language");
         if (languagePreference != null) {
@@ -27,7 +28,8 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                     Locale.setLocale(requireContext(), newLanguageCode);
 
                     // Start appen på nytt for at endringene skal tre i kraft
-                    requireActivity().recreate();return true;
+                    requireActivity().recreate();
+                    return true;
                 }
             });
         }
