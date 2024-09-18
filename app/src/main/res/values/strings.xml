@@ -20,7 +20,7 @@
     <string name="knapp7">7</string>
     <string name="knapp8">8</string>
     <string name="knapp9">9</string>
-    <string name="knappTilbake">Slett</string>
+    <string name="knappTilbake" translatable="false">&lt;-</string>
     <string name="knapp0">0</string>
     <string name="knappOk">OK</string>
 
