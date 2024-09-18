@@ -1,6 +1,7 @@
 package com.example.s375063s375045;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.Button;
@@ -71,6 +72,23 @@ public class StartSpill extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        // Vis en dialogboks for å bekrefte at brukeren vil avslutte
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.dialogTittel))
+                .setMessage(getString(R.string.dialogMelding))
+                .setPositiveButton(getString(R.string.ja), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Hvis brukeren bekrefter, avslutt aktiviteten
+                        finish();
+                    }
+                })
+                .setNegativeButton(getString(R.string.nei), null)
+                .show();
+    }
+
     // Metode for å vise neste spørsmål
     private void visNesteSpørsmål() {
         if (nåværendeSpørsmålIndeks < matteProblemer.size()) {
@@ -105,7 +123,6 @@ public class StartSpill extends AppCompatActivity {
         nåværendeSpørsmålIndeks++;  // Går til neste spørsmål
         visNesteSpørsmål();  // Vis neste spørsmål
     }
-
 
     // Lagrer spilldata ved interrupts
     @Override
