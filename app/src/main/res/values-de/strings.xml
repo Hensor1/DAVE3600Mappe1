@@ -11,17 +11,6 @@
     <string name="svar">Schreiben Sie hier Ihre Antwort</string>
     <string name="riktigeSvar">richtige Antworten</string>
     <string name="galeSvar">falsche Antworten</string>
-    <string name="knapp1">1</string>
-    <string name="knapp2">2</string>
-    <string name="knapp3">3</string>
-    <string name="knapp4">4</string>
-    <string name="knapp5">5</string>
-    <string name="knapp6">6</string>
-    <string name="knapp7">7</string>
-    <string name="knapp8">8</string>
-    <string name="knapp9">9</string>
-    <string name="knapp0">0</string>
-    <string name="knappOk">OK</string>
 
 
     <!-- STRINGS FOR OM SPILLET -->
@@ -83,6 +72,4 @@
     <string name="spillFerdigTittel">Das Spiel ist beendet</string>
     <string name="spillFerdigMelding">Sie haben alle Fragen beantwortet. Drücken Sie OK, um das Spiel zu beenden.</string>
     <string name="ok">OK</string>
-
-
 </resources>
