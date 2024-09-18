@@ -24,7 +24,6 @@
     <string name="knapp0">0</string>
     <string name="knappOk">OK</string>
 
-
     <!-- STRINGS FOR OM SPILLET -->
     <string name="velkommentilMattespillet">Velkommen til Mattespillet!</string>
     <string name="infoOmSpillet">Mattespillet er et lærerikt og morsomt spill laget for å hjelpe deg med å forbedre dine matematikkferdigheter! I dette spillet vil du bli presentert med en rekke addisjonsregnestykker. Målet ditt er å bruke knappene for å skrive inn de riktige svarene.
@@ -84,5 +83,8 @@
     <string name="ja">Ja</string>
     <string name="nei">Nei</string>
 
-
+    <!-- STRINGS FOR END GAME DIALOG -->
+    <string name="spillFerdigTittel">Spillet er ferdig</string>
+    <string name="spillFerdigMelding">Du har fullført alle spørsmålene. Trykk OK for å avslutte spillet.</string>
+    <string name="ok">OK</string>
 </resources>

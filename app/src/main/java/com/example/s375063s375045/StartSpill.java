@@ -1,34 +1,46 @@
 package com.example.s375063s375045;
 
 import android.app.AlertDialog;
+import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class StartSpill extends AppCompatActivity {
 
-    String svar="";
+    String svar = "";
+    int korrekteSvar = 0;
+    int galeSvar = 0;
+    int gjenståendeRunder = 0;
 
-    int korrekteSvar=0;
-    int galeSvar=0;
-    int gjenståendeRunder=0;
+    List<String> matteProblemer; // Liste for regnestykkene
+    int nåværendeSpørsmålIndeks = 0; // Indeks for å holde styr på nåværende spørsmål
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_spill);
 
-        int [] knappIdListe = {
+        // Last inn matteproblemene fra arrays.xml
+        Resources res = getResources();
+        String[] matteProblemerArray = res.getStringArray(R.array.matte_problemer);
+
+        // Konverter array til ArrayList og bland rekkefølgen tilfeldig
+        matteProblemer = new ArrayList<>();
+        Collections.addAll(matteProblemer, matteProblemerArray);
+        Collections.shuffle(matteProblemer); // Bland spørsmålene
+
+        // Start med første spørsmål
+        visNesteSpørsmål();
+
+        int[] knappIdListe = {
+                R.id.knapp0,
                 R.id.knapp1,
                 R.id.knapp2,
                 R.id.knapp3,
@@ -39,27 +51,63 @@ public class StartSpill extends AppCompatActivity {
                 R.id.knapp8,
                 R.id.knapp9,
                 R.id.knappTilbake,
-                R.id.knapp0,
                 R.id.knappOk
         };
-        for (int i = 0; i<knappIdListe.length; i++){
-            Button knapp = (Button) findViewById(knappIdListe[i]);
+
+        // Legger til lyttere for hver knapp
+        for (int i = 0; i < knappIdListe.length; i++) {
+            Button knapp = findViewById(knappIdListe[i]);
             int finalI = i;
 
-            knapp.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            knapp.setOnClickListener(view -> {
+                if (knappIdListe[finalI] == R.id.knappTilbake) {
+                    slettSisteTall();  // Kall metoden for å slette siste tegn
+                } else if (knappIdListe[finalI] == R.id.knappOk) {
+                    sjekkSvar();  // Kall metoden for å sjekke svaret
+                } else {
                     nyttTallSvar(finalI);
                 }
             });
         }
-
     }
-    //Lagre spilldata ved interrupts
+
+    // Metode for å vise neste spørsmål
+    private void visNesteSpørsmål() {
+        if (nåværendeSpørsmålIndeks < matteProblemer.size()) {
+            String nesteSpørsmål = matteProblemer.get(nåværendeSpørsmålIndeks);
+            TextView tv = findViewById(R.id.txt_oppgave);
+            tv.setText(nesteSpørsmål.split("=")[0]); // Viser kun regnestykket uten svaret
+        } else {
+            // Spill ferdig når alle spørsmål er besvart
+            avsluttSpill();
+        }
+    }
+
+    // Metode for å sjekke svaret
+    private void sjekkSvar() {
+        TextView tv = findViewById(R.id.txt_oppgave);
+        String nåværendeSpørsmål = matteProblemer.get(nåværendeSpørsmålIndeks);
+
+        // Ekstrakt riktig svar fra spørsmålet (etter '='-tegnet)
+        String riktigSvar = nåværendeSpørsmål.split("=")[1];
+
+        if (svar.equals(riktigSvar)) {
+            korrekteSvar++;
+        } else {
+            galeSvar++;
+        }
+
+        visScore();  // Oppdaterer poengsummen
+        svar = "";  // Nullstiller svaret
+        nåværendeSpørsmålIndeks++;  // Går til neste spørsmål
+        visNesteSpørsmål();  // Vis neste spørsmål
+    }
+
+    // Lagrer spilldata ved interrupts
     @Override
-    protected void onSaveInstanceState (Bundle outstate){
+    protected void onSaveInstanceState(Bundle outstate) {
         super.onSaveInstanceState(outstate);
-        TextView tv = (TextView) findViewById(R.id.txt_oppgave);
+        TextView tv = findViewById(R.id.txt_oppgave);
         String spørsmål = tv.getText().toString();
 
         outstate.putString("spørsmål", spørsmål);
@@ -67,58 +115,60 @@ public class StartSpill extends AppCompatActivity {
         outstate.putInt("korrekteSvar", korrekteSvar);
         outstate.putInt("galeSvar", galeSvar);
         outstate.putInt("gjenståendeRunder", gjenståendeRunder);
+        outstate.putInt("nåværendeSpørsmålIndeks", nåværendeSpørsmålIndeks);
     }
 
-    //Gjenopprette spilldata
+    // Gjenoppretter spilldata
     @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
         String spørsmål = savedInstanceState.getString("spørsmål");
-        TextView tv = (TextView) findViewById(R.id.txt_oppgave);
+        TextView tv = findViewById(R.id.txt_oppgave);
         tv.setText(spørsmål);
 
         svar = savedInstanceState.getString("svar");
-
         gjenståendeRunder = savedInstanceState.getInt("gjenståendeRunder");
         galeSvar = savedInstanceState.getInt("galeSvar");
         korrekteSvar = savedInstanceState.getInt("korrekteSvar");
+        nåværendeSpørsmålIndeks = savedInstanceState.getInt("nåværendeSpørsmålIndeks");
+
         visScore();
     }
 
-    private void visScore(){
-        TextView riktige = (TextView) findViewById(R.id.txt_riktige_svar);
+    private void visScore() {
+        TextView riktige = findViewById(R.id.txt_riktige_svar);
         riktige.setText(String.valueOf(korrekteSvar));
 
-        TextView gale = (TextView) findViewById(R.id.txt_gale_svar);
+        TextView gale = findViewById(R.id.txt_gale_svar);
         gale.setText(String.valueOf(galeSvar));
     }
 
-    private void  settSvar(){
-        TextView tv = (TextView) findViewById(R.id.txt_svar);
+    private void settSvar() {
+        TextView tv = findViewById(R.id.txt_svar);
         tv.setText(svar);
-
     }
 
+    // Legger til et nytt tall til svaret
     private void nyttTallSvar(int tall) {
         svar += tall;
         settSvar();
     }
-    @Override
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setTitle(getString(R.string.dialogTittel))  // Referanse til strings.xml
-                .setMessage(getString(R.string.dialogMelding))  // Referanse til strings.xml
-                .setPositiveButton(getString(R.string.ja), (dialog, which) -> {
-                    // Avslutt aktiviteten
-                    finish();
-                })
-                .setNegativeButton(getString(R.string.nei), (dialog, which) -> {
-                    // Lukk dialogboksen
-                    dialog.dismiss();
-                })
-                .show();
+
+    // Sletter siste tall i svaret
+    private void slettSisteTall() {
+        if (svar.length() > 0) {
+            svar = svar.substring(0, svar.length() - 1);  // Fjerner siste tegn
+            settSvar();  // Oppdaterer visningen av svaret
+        }
     }
 
-
+    // Avslutter spillet når alle spørsmål er besvart
+    private void avsluttSpill() {
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.spillFerdigTittel))
+                .setMessage(getString(R.string.spillFerdigMelding))
+                .setPositiveButton(getString(R.string.ok), (dialog, which) -> finish())
+                .show();
+    }
 }
