@@ -81,8 +81,8 @@
     <string name="nei">Nein</string>
 
     <!-- STRINGS FOR END GAME DIALOG -->
-    <string name="spillFerdigTittel">Spillet er ferdig</string>
-    <string name="spillFerdigMelding">Du har fullført alle spørsmålene. Trykk OK for å avslutte spillet.</string>
+    <string name="spillFerdigTittel">Das Spiel ist beendet</string>
+    <string name="spillFerdigMelding">Sie haben alle Fragen beantwortet. Drücken Sie OK, um das Spiel zu beenden.</string>
     <string name="ok">OK</string>
 
 

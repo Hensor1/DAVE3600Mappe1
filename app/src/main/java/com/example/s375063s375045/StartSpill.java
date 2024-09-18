@@ -98,10 +98,14 @@ public class StartSpill extends AppCompatActivity {
         }
 
         visScore();  // Oppdaterer poengsummen
+
         svar = "";  // Nullstiller svaret
+        settSvar(); // Oppdaterer visningen av svaret til å være tom
+
         nåværendeSpørsmålIndeks++;  // Går til neste spørsmål
         visNesteSpørsmål();  // Vis neste spørsmål
     }
+
 
     // Lagrer spilldata ved interrupts
     @Override
