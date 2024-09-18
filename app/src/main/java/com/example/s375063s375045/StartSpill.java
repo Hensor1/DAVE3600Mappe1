@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
@@ -137,7 +138,7 @@ public class StartSpill extends AppCompatActivity {
 
     // Lagrer spilldata ved interrupts
     @Override
-    protected void onSaveInstanceState(Bundle outstate) {
+    protected void onSaveInstanceState(@NonNull Bundle outstate) {
         super.onSaveInstanceState(outstate);
         TextView tv = findViewById(R.id.txt_oppgave);
         String spørsmål = tv.getText().toString();
@@ -152,7 +153,7 @@ public class StartSpill extends AppCompatActivity {
 
     // Gjenoppretter spilldata
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
         String spørsmål = savedInstanceState.getString("spørsmål");
@@ -189,7 +190,7 @@ public class StartSpill extends AppCompatActivity {
 
     // Sletter siste tall i svaret
     private void slettSisteTall() {
-        if (svar.length() > 0) {
+        if (!svar.isEmpty()) {
             svar = svar.substring(0, svar.length() - 1);  // Fjerner siste tegn
             settSvar();  // Oppdaterer visningen av svaret
         }
