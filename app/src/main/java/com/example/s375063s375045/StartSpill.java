@@ -28,7 +28,6 @@ public class StartSpill extends AppCompatActivity {
         setContentView(R.layout.start_spill);
 
         int [] knappIdListe = {
-                R.id.knapp0,
                 R.id.knapp1,
                 R.id.knapp2,
                 R.id.knapp3,
@@ -37,7 +36,10 @@ public class StartSpill extends AppCompatActivity {
                 R.id.knapp6,
                 R.id.knapp7,
                 R.id.knapp8,
-                R.id.knapp9
+                R.id.knapp9,
+                R.id.knappTilbake,
+                R.id.knapp0,
+                R.id.knappOk
         };
         for (int i = 0; i<knappIdListe.length; i++){
             Button knapp = (Button) findViewById(knappIdListe[i]);
