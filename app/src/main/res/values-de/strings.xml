@@ -74,4 +74,11 @@
     <string name="no">no</string>
     <string name="de">de</string>
     <string name="Velg">Wählen</string>
+    <!-- STRINGS FOR START SPILL -->
+    <string name="dialogTittel">Auszahlung</string>
+    <string name="dialogMelding">Bist du sicher, dass du das Spiel beenden willst?</string>
+    <string name="ja">Ja</string>
+    <string name="nei">Nein</string>
+
+
 </resources>

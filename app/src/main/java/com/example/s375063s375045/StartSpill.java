@@ -1,5 +1,6 @@
 package com.example.s375063s375045;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -103,5 +104,21 @@ public class StartSpill extends AppCompatActivity {
         svar += tall;
         settSvar();
     }
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.dialogTittel))  // Referanse til strings.xml
+                .setMessage(getString(R.string.dialogMelding))  // Referanse til strings.xml
+                .setPositiveButton(getString(R.string.ja), (dialog, which) -> {
+                    // Avslutt aktiviteten
+                    finish();
+                })
+                .setNegativeButton(getString(R.string.nei), (dialog, which) -> {
+                    // Lukk dialogboksen
+                    dialog.dismiss();
+                })
+                .show();
+    }
+
 
 }

@@ -78,4 +78,11 @@
         <item>de</item>
     </string-array>
 
+    <!-- STRINGS FOR DIALOGBOKS -->
+    <string name="dialogTittel">Avslutt spill</string>
+    <string name="dialogMelding">Er du sikker på at du vil avslutte spillet?</string>
+    <string name="ja">Ja</string>
+    <string name="nei">Nei</string>
+
+
 </resources>
