@@ -8,7 +8,7 @@
 
     <!-- TextView for oppgave -->
     <TextView
-        android:id="@+id/txt_oppgave"
+        android:id="@+id/txt_løs_oppgaven"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/løsOppgaven"
@@ -19,6 +19,22 @@
         android:layout_marginBottom="16dp"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView for oppgave -->
+    <TextView
+        android:id="@+id/txt_oppgave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_løs_oppgaven"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -36,12 +52,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- TextView for riktige svar -->
+    <!-- TextView for tilbakemelding -->
     <TextView
-        android:id="@+id/txt_riktige_svar"
+        android:id="@+id/txt_tilbakemelding"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/riktigeSvar"
+        android:text=""
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="@android:color/black"
@@ -52,24 +68,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- TextView for gale svar -->
+    <!-- TextView for å vise svar -->
     <TextView
-        android:id="@+id/txt_gale_svar"
+        android:id="@+id/txt_vis_svar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/galeSvar"
+        android:text=""
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="11dp"
         android:layout_marginBottom="16dp"
         android:layout_marginHorizontal="16dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_riktige_svar"
+        app:layout_constraintTop_toBottomOf="@id/txt_tilbakemelding"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
     <!-- GridLayout for å organisere knappene, plassert på bunnen -->
+    <Button
+        android:id="@+id/knappVisSvar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/knappVisSvar"
+        app:layout_constraintTop_toBottomOf="@id/txt_vis_svar"
+        app:layout_constraintEnd_toEndOf="parent" />
+        />
+
     <GridLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"

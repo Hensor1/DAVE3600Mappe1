@@ -9,8 +9,9 @@
     <!-- STRINGS FOR START SPILL -->
     <string name="løsOppgaven">Løs Oppgaven</string>
     <string name="svar">Skriv svaret ditt her</string>
-    <string name="riktigeSvar">Riktige svar</string>
-    <string name="galeSvar">Gale svar</string>
+    <string name="tilbakemeldingRiktig">Riktig svar! Bra jobba!</string>
+    <string name="tilbakemeldingFeil">Det var ikke helt riktig, prøv igjen</string>
+    <string name="knappVisSvar">Vis Svar</string>
     <string name="knapp1" translatable="false">1</string>
     <string name="knapp2" translatable="false">2</string>
     <string name="knapp3" translatable="false">3</string>
