@@ -192,6 +192,18 @@
             android:textColor="@android:color/white"
             android:textSize="24sp" />
 
+        <!-- Knapp Tilbake -->
+        <Button
+            android:id="@+id/knappTilbake"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:text="@string/knappTilbake"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/knapp_bakgrunn" />
+
         <!-- Knapp 0 -->
         <Button
             android:id="@+id/knapp0"
@@ -203,6 +215,18 @@
             android:text="@string/knapp0"
             android:textColor="@android:color/white"
             android:textSize="24sp" />
+
+        <!-- Knapp OK -->
+        <Button
+            android:id="@+id/knappOk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:text="@string/knappOk"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/knapp_bakgrunn" />
 
     </GridLayout>
 
