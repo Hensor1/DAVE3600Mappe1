@@ -1,8 +1,8 @@
 package com.example.s375063s375045;
 
-
 import static com.example.s375063s375045.Locale.setLocale;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-
 
 public class SettingsFragment extends PreferenceFragmentCompat {
 
@@ -27,8 +26,14 @@ public class SettingsFragment extends PreferenceFragmentCompat {
                     String newLanguageCode = (String) newValue;
                     Locale.setLocale(requireContext(), newLanguageCode);
 
-                    // Start appen på nytt for at endringene skal tre i kraft
-                    requireActivity().recreate();
+                    // Restart the application
+                    Intent intent = requireActivity().getBaseContext().getPackageManager()
+                            .getLaunchIntentForPackage(requireActivity().getBaseContext().getPackageName());
+                    if (intent != null) {
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                        requireActivity().finish();
+                    }
                     return true;
                 }
             });
@@ -38,7 +43,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
-        // Sett bakgrunnen fra drawable
+        // Set background from drawable
         view.setBackgroundResource(R.drawable.mattekul_bakgrunn);
         return view;
     }
