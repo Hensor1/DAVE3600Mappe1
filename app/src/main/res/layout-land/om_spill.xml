@@ -19,18 +19,17 @@
 
     <!-- Description TextView -->
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="882dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleTextView"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/infoOmSpillet"
-        android:textColor="@color/black"
-        android:textSize="18sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/infoOmSpilletLand"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>

@@ -13,9 +13,10 @@
         android:layout_height="wrap_content"
         android:text="@string/løsOppgaven"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="30sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="@android:color/black"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +32,7 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="16dp"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintTop_toBottomOf="@+id/txt_løs_oppgaven"
@@ -57,7 +58,7 @@
         android:id="@+id/txt_tilbakemelding"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="hei"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="@android:color/black"
@@ -73,7 +74,7 @@
         android:id="@+id/txt_vis_svar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="svaret"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="@android:color/black"
@@ -84,28 +85,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- GridLayout for å organisere knappene, plassert på bunnen -->
     <Button
         android:id="@+id/knappVisSvar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="20dp"
         android:text="@string/knappVisSvar"
-        app:layout_constraintTop_toBottomOf="@id/txt_vis_svar"
-        app:layout_constraintEnd_toEndOf="parent" />
-        />
-
-    <GridLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:columnCount="3"
-        android:rowCount="4"
-        android:padding="16dp"
-        android:layout_marginBottom="32dp"
+        tools:layout_editor_absoluteX="644dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <!-- GridLayout for å organisere knappene, plassert på bunnen -->
+    <GridLayout
+        android:layout_width="916dp"
+        android:layout_height="148dp"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:columnCount="6"
+        android:padding="8dp"
+        android:rowCount="2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/txt_tilbakemelding"
+        app:layout_constraintVertical_bias="0.923"
+        tools:layout_editor_absoluteX="0dp">
 
         <!-- Knapp 1 -->
         <Button
@@ -114,10 +115,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp1"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp 2 -->
         <Button
@@ -126,10 +127,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp2"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp 3 -->
         <Button
@@ -138,10 +139,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp3"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp 4 -->
         <Button
@@ -150,10 +151,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp4"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp 5 -->
         <Button
@@ -162,10 +163,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp5"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp 6 -->
         <Button
@@ -174,10 +175,22 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp6"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
+
+        <!-- Knapp Tilbake -->
+        <Button
+            android:id="@+id/knappTilbake"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
+            android:text="@string/knappTilbake"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
 
         <!-- Knapp 7 -->
         <Button
@@ -186,10 +199,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp7"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp 8 -->
         <Button
@@ -198,10 +211,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp8"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp 9 -->
         <Button
@@ -210,21 +223,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp9"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
-        <!-- Knapp Tilbake -->
-        <Button
-            android:id="@+id/knappTilbake"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:text="@string/knappTilbake"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp 0 -->
         <Button
@@ -233,10 +235,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knapp0"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
         <!-- Knapp OK -->
         <Button
@@ -245,10 +247,10 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
+            android:background="@drawable/knapp_bakgrunn"
             android:text="@string/knappOk"
-            android:textSize="24sp"
             android:textColor="@android:color/white"
-            android:background="@drawable/knapp_bakgrunn" />
+            android:textSize="24sp" />
 
     </GridLayout>
 

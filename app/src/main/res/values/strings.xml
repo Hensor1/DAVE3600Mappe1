@@ -1,21 +1,91 @@
 <resources>
+    <!-- STRINGS FOR STARTSIDEN -->
     <string name="app_name">Matteopplæring</string>
-    <string-array name="matte_problemer">
-        <item>5 + 3=8</item>
-        <item>12 + 7=19</item>
-        <item>6 + 4=10</item>
-        <item>9 + 5=14</item>
-        <item>7 + 8=15</item>
-        <item>4 + 9=13</item>
-        <item>11 + 6=17</item>
-        <item>8 + 3=11</item>
-        <item>7 + 2=9</item>
-        <item>15 + 4=19</item>
-        <item>5 + 7=12</item>
-        <item>9 + 1=10</item>
-        <item>6 + 8=14</item>
-        <item>10 + 5=15</item>
-        <item>3 + 4=7</item>
-        <item>13 + 2=15</item>
+    <string name="matteSpill">Mattespill</string>
+    <string name="startSpill">Start spill</string>
+    <string name="omSpillet">Om Spillet</string>
+    <string name="preferanser">Preferanser</string>
+
+    <!-- STRINGS FOR START SPILL -->
+    <string name="løsOppgaven">Løs Oppgaven</string>
+    <string name="svar">Skriv svaret ditt her</string>
+    <string name="tilbakemeldingRiktig">Riktig svar! Bra jobba!</string>
+    <string name="tilbakemeldingFeil">Det var ikke helt riktig, prøv igjen</string>
+    <string name="knappVisSvar">Vis Svar</string>
+    <string name="knapp1" translatable="false">1</string>
+    <string name="knapp2" translatable="false">2</string>
+    <string name="knapp3" translatable="false">3</string>
+    <string name="knapp4" translatable="false">4</string>
+    <string name="knapp5" translatable="false">5</string>
+    <string name="knapp6" translatable="false">6</string>
+    <string name="knapp7" translatable="false">7</string>
+    <string name="knapp8" translatable="false">8</string>
+    <string name="knapp9" translatable="false">9</string>
+    <string name="knappTilbake" translatable="false">&lt;-</string>
+    <string name="knapp0" translatable="false">0</string>
+    <string name="knappOk" translatable="false">OK</string>
+
+    <!-- STRINGS FOR OM SPILLET -->
+    <string name="velkommentilMattespillet">Velkommen til Mattespillet!</string>
+    <string name="infoOmSpillet">Mattespillet er et lærerikt og morsomt spill laget for å hjelpe deg med å forbedre dine matematikkferdigheter! I dette spillet vil du bli presentert med en rekke addisjonsregnestykker. Målet ditt er å bruke knappene for å skrive inn de riktige svarene.
+        \n
+        \nHvordan Spiller Du?
+        \n-Når du starter spillet, får du se en addisjon oppgave.
+        \n- Bruk tallknappene til å velge det riktige svaret.
+        \n- Hvis du svarer riktig, vil du gå videre til neste oppgave.
+        \n- Hvis svaret er feil, vil du få en vennlig tilbakemelding og mulighet til å prøve igjen.
+        \n
+        \nSpillalternativer:
+        \n- Antall Spørsmål: Du kan velge hvor mange oppgaver du vil ha i spillet: 5, 10 eller 15.
+        \n- Språk: Velg mellom norsk og tysk for å tilpasse spillet til ditt foretrukne språk.
+        \n
+        \nTips for å Lære:
+        \n- Ta deg tid til å tenke før du svarer.
+        \n- Prøv å forbedre tiden din mens du besvarer oppgavene.
+        \n- Ha det moro mens du lærer!</string>
+
+    <string name="infoOmSpilletLand">Mattespillet er et lærerikt og morsomt spill laget for å hjelpe deg med å forbedre dine matematikkferdigheter! I dette spillet vil du bli presentert med en rekke addisjonsregnestykker. Målet ditt er å bruke knappene for å skrive inn de riktige svarene.
+        \n
+        \nHvordan Spiller Du?
+        \n-Når du starter spillet, får du se en addisjon oppgave.
+        Bruk tallknappene til å velge det riktige svaret.
+        Hvis du svarer riktig, vil du gå videre til neste oppgave.
+        Hvis svaret er feil, vil du få en vennlig tilbakemelding og mulighet til å prøve igjen.
+        \n
+        \nSpillalternativer:
+        Antall Spørsmål: Du kan velge hvor mange oppgaver du vil ha i spillet: 5, 10 eller 15.
+        Språk: Velg mellom norsk og tysk for å tilpasse spillet til ditt foretrukne språk.
+        \n
+        \nTips for å Lære:
+        Ta deg tid til å tenke før du svarer.
+        Prøv å forbedre tiden din mens du besvarer oppgavene.
+        Ha det moro mens du lærer!</string>
+
+    <!-- STRINGS FOR PREFERANSER -->
+    <string name="velgSprak">Velg språk</string>
+    <string name="sprak">Språk</string>
+    <string name="antallStykker">Antall stykker</string>
+    <string name="velgAntall">Velg antall</string>
+
+    <!-- Språkvalg -->
+    <string-array name="sprak_entries">
+        <item>Norsk</item>
+        <item>Tysk</item>
     </string-array>
+
+    <string-array name="sprak_values">
+        <item>nb</item>
+        <item>de</item>
+    </string-array>
+
+    <!-- STRINGS FOR DIALOGBOKS -->
+    <string name="dialogTittel">Avslutt spill</string>
+    <string name="dialogMelding">Er du sikker på at du vil avslutte spillet?</string>
+    <string name="ja">Ja</string>
+    <string name="nei">Nei</string>
+
+    <!-- STRINGS FOR END GAME DIALOG -->
+    <string name="spillFerdigTittel">Spillet er ferdig</string>
+    <string name="spillFerdigMelding">Du har fullført alle spørsmålene. Trykk OK for å avslutte spillet.</string>
+    <string name="ok">OK</string>
 </resources>

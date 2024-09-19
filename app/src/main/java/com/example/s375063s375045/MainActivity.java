@@ -1,5 +1,9 @@
 package com.example.s375063s375045;
 
+import static com.example.s375063s375045.Locale.setLocale;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.preference.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
         preferanserKnapp = findViewById(R.id.preferanserKnapp);
         fragmentContainer = findViewById(R.id.fragment_container);
 
-        startSpillKnapp.setOnClickListener(view -> {
-            fragmentContainer.setVisibility(View.VISIBLE); // Show fragment container
-            replaceFragment(new StartSpill()); // Replace with StartSpill fragment
+        startSpillKnapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nyAktivitet(StartSpill.class);
+            }
         });
 
         omSpilletKnapp.setOnClickListener(view -> {
@@ -46,8 +53,12 @@ public class MainActivity extends AppCompatActivity {
 
         preferanserKnapp.setOnClickListener(view -> {
             fragmentContainer.setVisibility(View.VISIBLE); // Show fragment container
-            replaceFragment(new Preferanser()); // Replace with Preferanser fragment
+            replaceFragment(new SettingsFragment()); // Replace with Preferanser fragment
         });
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String languageCode = sharedPrefs.getString("language", "en"); // Standard til engelsk
+        setLocale(this, languageCode);
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -56,5 +67,10 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
+    }
+
+    private void nyAktivitet(Class k){
+        Intent i = new Intent(this, k);
+        startActivity(i);
     }
 }
