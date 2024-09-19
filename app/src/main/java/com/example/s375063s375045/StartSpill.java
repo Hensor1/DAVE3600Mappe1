@@ -20,12 +20,14 @@ import java.util.List;
 public class StartSpill extends AppCompatActivity {
 
     String svar = "";
-    int korrekteSvar = 0;
-    int galeSvar = 0;
+    String tilbakemelding = "";
+    String riktigSvar="";
     int gjenståendeRunder = 0;
 
     List<String> matteProblemer; // Liste for regnestykkene
     int nåværendeSpørsmålIndeks = 0; // Indeks for å holde styr på nåværende spørsmål
+
+    Button knappVisSvar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,10 @@ public class StartSpill extends AppCompatActivity {
         // Start med første spørsmål
         visNesteSpørsmål();
 
+        //Gjemmer "vis svar"-knappen ved oppstart
+        knappVisSvar = findViewById(R.id.knappVisSvar);
+        knappVisSvar.setVisibility(View.GONE);
+
         int[] knappIdListe = {
                 R.id.knapp0,
                 R.id.knapp1,
@@ -65,7 +71,8 @@ public class StartSpill extends AppCompatActivity {
                 R.id.knapp8,
                 R.id.knapp9,
                 R.id.knappTilbake,
-                R.id.knappOk
+                R.id.knappOk,
+                R.id.knappVisSvar
         };
 
         // Legger til lyttere for hver knapp
@@ -80,6 +87,8 @@ public class StartSpill extends AppCompatActivity {
                         slettSisteTall();  // Kall metoden for å slette siste tegn
                     } else if (knappIdListe[finalI] == R.id.knappOk) {
                         sjekkSvar();  // Kall metoden for å sjekke svaret
+                    } else if (knappIdListe[finalI] == R.id.knappVisSvar) {
+                        visSvar(); //Kall metoden for å vise svaret
                     } else {
                         nyttTallSvar(finalI);
                     }
@@ -121,25 +130,37 @@ public class StartSpill extends AppCompatActivity {
 
     // Metode for å sjekke svaret
     private void sjekkSvar() {
-        TextView tv = findViewById(R.id.txt_oppgave);
+        TextView tv = findViewById(R.id.txt_tilbakemelding);
+        TextView tv2 = findViewById(R.id.txt_vis_svar);
         String nåværendeSpørsmål = matteProblemer.get(nåværendeSpørsmålIndeks);
 
         // Ekstrakt riktig svar fra spørsmålet (etter '='-tegnet)
-        String riktigSvar = nåværendeSpørsmål.split("=")[1];
+        riktigSvar = nåværendeSpørsmål.split("=")[1];
 
         if (svar.equals(riktigSvar)) {
-            korrekteSvar++;
+            tv.setText(getString(R.string.tilbakemeldingRiktig));
+            tv2.setText("");
+            nåværendeSpørsmålIndeks++;  // Går til neste spørsmål
+            visNesteSpørsmål();  // Vis neste spørsmål
+            knappVisSvar.setVisibility(View.GONE); //Skjuler knappen dersom man svarer riktig
         } else {
-            galeSvar++;
+            tv.setText(getString(R.string.tilbakemeldingFeil));
+            knappVisSvar.setVisibility(View.VISIBLE);  // Vis "vis svar"-knappen dersom man svarer feil
         }
 
-        visScore();  // Oppdaterer poengsummen
+        //visScore();  // Oppdaterer poengsummen
 
         svar = "";  // Nullstiller svaret
         settSvar(); // Oppdaterer visningen av svaret til å være tom
 
-        nåværendeSpørsmålIndeks++;  // Går til neste spørsmål
-        visNesteSpørsmål();  // Vis neste spørsmål
+        tilbakemelding = tv.getText().toString();  // Lagrer tilbakemeldingen
+
+
+    }
+
+    private void visSvar() {
+        TextView tv = findViewById(R.id.txt_vis_svar);
+        tv.setText(riktigSvar);
     }
 
     // Lagrer spilldata ved interrupts
@@ -151,8 +172,7 @@ public class StartSpill extends AppCompatActivity {
 
         outstate.putString("spørsmål", spørsmål);
         outstate.putString("svar", svar);
-        outstate.putInt("korrekteSvar", korrekteSvar);
-        outstate.putInt("galeSvar", galeSvar);
+        outstate.putString("tilbakemelding", tilbakemelding);
         outstate.putInt("gjenståendeRunder", gjenståendeRunder);
         outstate.putInt("nåværendeSpørsmålIndeks", nåværendeSpørsmålIndeks);
     }
@@ -168,20 +188,21 @@ public class StartSpill extends AppCompatActivity {
 
         svar = savedInstanceState.getString("svar");
         gjenståendeRunder = savedInstanceState.getInt("gjenståendeRunder");
-        galeSvar = savedInstanceState.getInt("galeSvar");
-        korrekteSvar = savedInstanceState.getInt("korrekteSvar");
+        tilbakemelding = savedInstanceState.getString("tilbakemelding");
         nåværendeSpørsmålIndeks = savedInstanceState.getInt("nåværendeSpørsmålIndeks");
 
-        visScore();
+        //visScore();
     }
 
-    private void visScore() {
-        TextView riktige = findViewById(R.id.txt_riktige_svar);
+    /*private void visScore() {
+        TextView riktige = findViewById(R.id.txt_tilbakemelding);
         riktige.setText(String.valueOf(korrekteSvar));
 
         TextView gale = findViewById(R.id.txt_gale_svar);
         gale.setText(String.valueOf(galeSvar));
     }
+
+     */
 
     private void settSvar() {
         TextView tv = findViewById(R.id.txt_svar);

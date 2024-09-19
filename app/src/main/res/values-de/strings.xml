@@ -9,9 +9,9 @@
     <!-- STRINGS FOR START SPILL -->
     <string name="løsOppgaven">Lösen Sie das Problem</string>
     <string name="svar">Schreiben Sie hier Ihre Antwort</string>
-    <string name="riktigeSvar">richtige Antworten</string>
-    <string name="galeSvar">falsche Antworten</string>
-
+    <string name="tilbakemeldingRiktig">Richtig! Gut gemacht!</string>
+    <string name="tilbakemeldingFeil">Leider falsch, versuchen Sie es erneut</string>
+    <string name="knappVisSvar"> Antwort anzeigen</string>
 
     <!-- STRINGS FOR OM SPILLET -->
     <string name="velkommentilMattespillet">Willkommen beim Mathe-Spiel!</string>
