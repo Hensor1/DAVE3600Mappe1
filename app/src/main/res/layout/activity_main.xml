@@ -5,10 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F4F6"
     tools:context=".MainActivity">
 
-    <!-- Title TextView for the game -->
+    <!-- Bakgrunnsbilde -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/matte"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/matteSpill"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- Title TextView for spillet -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
@@ -18,17 +28,12 @@
         android:textColor="#333"
         android:textStyle="bold"
         android:layout_marginTop="40dp"
+        android:fontFamily="@font/font"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/matte"/>
-
+    <!-- Buttons og innhold under -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -47,7 +52,9 @@
             android:layout_marginBottom="16dp"
             android:backgroundTint="#4CAF50"
             android:text="@string/startSpill"
+            android:fontFamily="@font/font"
             android:textColor="#FFF"
+            android:drawablePadding="8dp"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -58,6 +65,7 @@
             android:layout_marginBottom="16dp"
             android:backgroundTint="#03A9F4"
             android:text="@string/omSpillet"
+            android:fontFamily="@font/font"
             android:textColor="#FFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -68,10 +76,13 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FF9800"
             android:text="@string/preferanser"
+            android:fontFamily="@font/font"
             android:textColor="#FFF"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <!-- Fragment container hvis nødvendig -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"

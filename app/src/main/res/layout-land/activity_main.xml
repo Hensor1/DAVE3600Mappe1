@@ -8,6 +8,17 @@
     android:background="#F3F4F6"
     tools:context=".MainActivity">
 
+    <!-- Bakgrunnsbilde -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/matte"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/matteSpill"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp"/>
+
     <!-- Title TextView for the game -->
 
     <TextView
@@ -16,20 +27,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/matteSpill"
+        android:fontFamily="@font/font"
         android:textColor="#333"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="912dp"
-        android:layout_height="208dp"
-        android:src="@drawable/matte"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -52,6 +56,7 @@
             android:layout_weight="1"
             android:backgroundTint="#4CAF50"
             android:text="@string/startSpill"
+            android:fontFamily="@font/font"
             android:textColor="#FFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -64,6 +69,7 @@
             android:layout_weight="1"
             android:backgroundTint="#03A9F4"
             android:text="@string/omSpillet"
+            android:fontFamily="@font/font"
             android:textColor="#FFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -75,6 +81,7 @@
             android:layout_weight="1"
             android:backgroundTint="#FF9800"
             android:text="@string/preferanser"
+            android:fontFamily="@font/font"
             android:textColor="#FFF"
             android:textSize="18sp"
             android:textStyle="bold" />

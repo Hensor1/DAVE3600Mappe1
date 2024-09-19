@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -135,16 +136,18 @@ public class StartSpill extends AppCompatActivity {
         String nåværendeSpørsmål = matteProblemer.get(nåværendeSpørsmålIndeks);
 
         // Ekstrakt riktig svar fra spørsmålet (etter '='-tegnet)
-        riktigSvar = nåværendeSpørsmål.split("=")[1];
+        riktigSvar = nåværendeSpørsmål.split("=")[1].trim();
 
         if (svar.equals(riktigSvar)) {
             tv.setText(getString(R.string.tilbakemeldingRiktig));
+            tv.setTextColor(Color.GREEN); // Setter tekstfarge til grønn
             tv2.setText("");
             nåværendeSpørsmålIndeks++;  // Går til neste spørsmål
             visNesteSpørsmål();  // Vis neste spørsmål
-            knappVisSvar.setVisibility(View.GONE); //Skjuler knappen dersom man svarer riktig
+            knappVisSvar.setVisibility(View.GONE); // Skjuler knappen dersom man svarer riktig
         } else {
             tv.setText(getString(R.string.tilbakemeldingFeil));
+            tv.setTextColor(Color.RED); // Setter tekstfarge til rød
             knappVisSvar.setVisibility(View.VISIBLE);  // Vis "vis svar"-knappen dersom man svarer feil
         }
 

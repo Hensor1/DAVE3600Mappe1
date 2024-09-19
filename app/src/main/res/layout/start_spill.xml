@@ -3,8 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/mattekul_bakgrunn"
     tools:context=".StartSpill">
+
+    <!-- Bakgrunnsbilde -->
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/matte"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/matteSpill"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="30dp"/>
 
     <!-- TextView for oppgave -->
     <TextView
@@ -12,6 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/løsOppgaven"
+        android:fontFamily="@font/font"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="@android:color/black"
@@ -20,7 +31,9 @@
         android:layout_marginHorizontal="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/knapp_bakgrunn"
+        android:backgroundTint="#4CAF50"/>
 
     <!-- TextView for oppgave -->
     <TextView
@@ -28,6 +41,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text=""
+        android:fontFamily="@font/font"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="@android:color/black"
@@ -36,7 +50,9 @@
         android:layout_marginHorizontal="16dp"
         app:layout_constraintTop_toBottomOf="@+id/txt_løs_oppgaven"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/knapp_bakgrunn"
+        android:backgroundTint="#FFFFFFFF"/>
 
     <!-- TextView for å vise svaret til brukeren -->
     <TextView
@@ -44,29 +60,33 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/svar"
+        android:fontFamily="@font/font"
         android:textSize="32sp"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp"
         app:layout_constraintTop_toBottomOf="@id/txt_oppgave"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/knapp_bakgrunn"
+        android:backgroundTint="#FFFFFFFF"/>
 
     <!-- TextView for tilbakemelding -->
     <TextView
         android:id="@+id/txt_tilbakemelding"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/knapp_bakgrunn"
+        android:backgroundTint="#FFFFFFFF"
+        android:fontFamily="@font/font"
         android:text=""
         android:textAlignment="center"
-        android:textSize="24sp"
         android:textColor="@android:color/black"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginHorizontal="16dp"
-        app:layout_constraintTop_toBottomOf="@id/txt_svar"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_svar" />
 
     <!-- TextView for å vise svar -->
     <TextView
@@ -74,6 +94,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text=""
+        android:fontFamily="@font/font"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textColor="@android:color/black"
@@ -92,6 +113,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:text="@string/knappVisSvar"
+        android:fontFamily="@font/font"
         app:layout_constraintTop_toBottomOf="@id/txt_vis_svar"
         app:layout_constraintEnd_toEndOf="parent" />
         />
@@ -115,6 +137,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp1"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -127,6 +150,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp2"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -139,6 +163,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp3"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -151,6 +176,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp4"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -163,6 +189,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp5"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -175,6 +202,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp6"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -187,6 +215,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp7"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -199,6 +228,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp8"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -211,6 +241,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp9"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -222,6 +253,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knappTilbake"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -234,6 +266,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knapp0"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />
@@ -246,6 +279,7 @@
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:text="@string/knappOk"
+            android:fontFamily="@font/font"
             android:textSize="24sp"
             android:textColor="@android:color/white"
             android:background="@drawable/knapp_bakgrunn" />

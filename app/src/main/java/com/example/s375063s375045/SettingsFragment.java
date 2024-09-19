@@ -44,7 +44,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         // Set background from drawable
-        view.setBackgroundResource(R.drawable.mattekul_bakgrunn);
+        view.setBackgroundResource(R.drawable.matte);
         return view;
     }
 }
