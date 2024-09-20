@@ -18,7 +18,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="30dp"/>
 
-    <!-- Title TextView for spillet -->
+    <!-- Tittelen for spillet -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="0dp"
@@ -86,7 +86,6 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Fragment container hvis nødvendig -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"

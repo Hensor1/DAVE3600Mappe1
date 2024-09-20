@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="30dp"/>
 
-    <!-- TextView for oppgave -->
+    <!-- Overskrift på siden -->
     <TextView
         android:id="@+id/txt_løs_oppgaven"
         android:layout_width="0dp"
@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@android:color/holo_green_light"/>
 
-    <!-- TextView for oppgave -->
+    <!-- TextView for der oppgaven skal vises -->
     <TextView
         android:id="@+id/txt_oppgave"
         android:layout_width="0dp"
@@ -53,7 +53,7 @@
         android:background="@drawable/knapp_bakgrunn"
         android:backgroundTint="#FFFFFFFF"/>
 
-    <!-- TextView for å vise svaret til brukeren -->
+    <!-- TextView der brukeren skal skrive inn svaret -->
     <TextView
         android:id="@+id/txt_svar"
         android:layout_width="0dp"

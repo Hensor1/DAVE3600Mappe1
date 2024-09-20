@@ -13,6 +13,8 @@ public class OmSpill extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Inflater layouten "om_spill" og returnerer visningen for dette fragmentet
         return inflater.inflate(R.layout.om_spill, container, false);
     }
 }
+

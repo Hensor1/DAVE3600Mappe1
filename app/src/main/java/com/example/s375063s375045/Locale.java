@@ -9,14 +9,16 @@ import androidx.preference.PreferenceManager;
 
 public class Locale {
 
+    // Denne metoden brukes til å sette appens språk ved hjelp av en språk-kode
     public static void setLocale(Context context, String languageCode) {
-        // Opprett LocaleListCompat med ønsket språk
+        // Oppretter en LocaleListCompat med det ønskede språket basert på språkkoden
         LocaleListCompat appLocale = LocaleListCompat.forLanguageTags(languageCode);
-        // Sett applikasjonens lokaliteter
+        // Setter appens språk ved å oppdatere appens lokale med det nye språket
         AppCompatDelegate.setApplicationLocales(appLocale);
 
-        // Lagre den valgte språkkoden i SharedPreferences
+        // Får tilgang til SharedPreferences for å lagre språkkoden slik at språket kan huskes neste gang appen startes
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        // Lagre språkkoden i SharedPreferences ved å bruke "language" som nøkkel
         sharedPrefs.edit().putString("language", languageCode).apply();
     }
 }

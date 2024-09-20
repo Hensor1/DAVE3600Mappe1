@@ -28,17 +28,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Setter padding for hovedvisningen basert på systemets statuslinje og navigasjonslinje
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+        // Initialiserer knappene og fragmentbeholderen
         startSpillKnapp = findViewById(R.id.startSpillKnapp);
         omSpilletKnapp = findViewById(R.id.omSpilletKnapp);
         preferanserKnapp = findViewById(R.id.preferanserKnapp);
         fragmentContainer = findViewById(R.id.fragment_container);
 
+        // Starter ny aktivitet for spillet når "Start Spill"-knappen trykkes
         startSpillKnapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,31 +49,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Viser "Om Spillet"-fragmentet når "Om Spillet"-knappen trykkes
         omSpilletKnapp.setOnClickListener(view -> {
-            fragmentContainer.setVisibility(View.VISIBLE); // Show fragment container
-            replaceFragment(new OmSpill()); // Replace with OmSpill fragment
+            fragmentContainer.setVisibility(View.VISIBLE); // Viser fragmentcontainer
+            replaceFragment(new OmSpill()); // Bytter til OmSpill-fragmentet
         });
 
+        // Viser innstillingsfragmentet når "Preferanser"-knappen trykkes
         preferanserKnapp.setOnClickListener(view -> {
-            fragmentContainer.setVisibility(View.VISIBLE); // Show fragment container
-            replaceFragment(new SettingsFragment()); // Replace with Preferanser fragment
+            fragmentContainer.setVisibility(View.VISIBLE); // Viser fragmentcontainer
+            replaceFragment(new SettingsFragment()); // Bytter til Preferanser-fragmentet
         });
 
+        // Henter lagret språkkode fra SharedPreferences (standard engelsk), og setter appens språk
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String languageCode = sharedPrefs.getString("language", "en"); // Standard til engelsk
         setLocale(this, languageCode);
     }
 
+    // Metode for å bytte fragmenter i fragmentbeholderen
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        fragmentTransaction.addToBackStack(null); // Legger til i tilbake-stakken
+        fragmentTransaction.commit(); // Utfører transaksjonen
     }
 
+    // Metode for å starte en ny aktivitet
     private void nyAktivitet(Class k){
         Intent i = new Intent(this, k);
-        startActivity(i);
+        startActivity(i); // Starter aktiviteten
     }
 }
+

@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="30dp"/>
 
-    <!-- Title TextView for the game information -->
+    <!-- Tittelen for siden -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         android:backgroundTint="#ABE5FF"
         />
 
-    <!-- Description TextView -->
+    <!-- Teksten som forklarer spillet -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
